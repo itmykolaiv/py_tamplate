@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My App</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <p>This is {{ my_string }}</p>
+    <table border="1">
+        <tr>
+            <td>Artist</td>
+            <td>Track</td>
+            <td>Genre</td>
+        </tr>
+        {% for track in track_rows %}
+        <tr>
+            <td>{{ track.artist }}</td>
+            <td>{{ track.track_name }}</td>
+            <td>{{ track.genre_name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
