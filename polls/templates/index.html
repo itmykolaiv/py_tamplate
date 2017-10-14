@@ -1,18 +1,29 @@
 {% include 'header.html' %}
-<h1>Hello World</h1>
-<p>This is {{ my_string }}</p>
-<table border="1">
-    <tr>
-        <td>Artist</td>
-        <td>Track</td>
-        <td>Genre</td>
-    </tr>
-    {% for track in track_rows %}
-    <tr>
-        <td>{{ track.artist }}</td>
-        <td>{{ track.track_name }}</td>
-        <td>{{ track.genre_name }}</td>
-    </tr>
-    {% endfor %}
-</table>
+<div class="row">
+    <div class="column small-12">
+        <h1>Track List</h1>
+        <p>This is {{ my_string }}</p>
+
+        <table>
+            <tr>
+                <td>Artist</td>
+                <td>Track</td>
+                <td>Genre</td>
+                <td>Actions</td>
+            </tr>
+            {% for track in track_rows %}
+            <tr>
+                <td>{{ track.artist }}</td>
+                <td>{{ track.track_name }}</td>
+                <td>{{ track.genre_name }}</td>
+                <td>
+                    <button class="button">Edit</button>
+                    <button class="button alert">Remove</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
 {% include 'footer.html' %}

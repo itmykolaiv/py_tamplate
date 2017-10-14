@@ -1,19 +1,23 @@
 {% include 'header.html' %}
-<h1>Add Track</h1>
+<div class="row">
+    <div class="column small-12">
+        <h1>Add Track</h1>
 
-<form action="/tracks/add" method="post">
-    <table>
-        <tr>
-            <td>Track name:</td>
-            <td><input type="text" name="track_name" /></td>
-        </tr>
-        <tr>
-            <td>Artist:</td>
-            <td><input type="text" name="artist" /></td>
-        </tr>
-    </table>
-    <button>Submit</button>
-</form>
-
+        <form action="/tracks/add" method="post">
+            <table width='100%'>
+                <tr>
+                    <td width='115'>Track name:</td>
+                    <td><input type="text" name="track_name" /></td>
+                </tr>
+                <tr>
+                    <td>Artist:</td>
+                    <td><input type="text" name="artist" /></td>
+                </tr>
+            </table>
+            <button class="button">Submit</button>
+        </form>
+    </div>
+    
+</div>
 {% include 'footer.html' %}
 
