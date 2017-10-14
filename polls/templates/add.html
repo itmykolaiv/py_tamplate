@@ -1,0 +1,19 @@
+{% include 'header.html' %}
+<h1>Add Track</h1>
+
+<form action="/tracks/add" method="post">
+    <table>
+        <tr>
+            <td>Track name:</td>
+            <td><input type="text" name="track_name" /></td>
+        </tr>
+        <tr>
+            <td>Artist:</td>
+            <td><input type="text" name="artist" /></td>
+        </tr>
+    </table>
+    <button>Submit</button>
+</form>
+
+{% include 'footer.html' %}
+

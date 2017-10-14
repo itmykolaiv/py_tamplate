@@ -24,6 +24,14 @@ def index(request):
     
     return HttpResponse(result)
 
+@csrf_exempt
+def add(request):
+    
+
+    result = render_to_string('add.html', {})
+    
+    return HttpResponse(result)
+
 def dictfetchall(cursor):
     "Return all rows from a cursor as a dict"
     columns = [col[0] for col in cursor.description]
