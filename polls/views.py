@@ -3,6 +3,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.db import connections
 from django.template.loader import render_to_string
 from polls.models import Libruary
+from django.core.paginator import Paginator
 
 @csrf_exempt
 def index(request):
@@ -17,11 +18,16 @@ def index(request):
     #   " LEFT JOIN genre ON (libruary.genre = genre.id)")
     
     rows = Libruary.objects.all()
+
+    paginator = Paginator(rows, 2)
     # dictfetchall(cursor)
+    page = request.GET.get('page', 1)
+    p_rows = paginator.page(page)
     
+
     result = render_to_string('index.html', {
         'my_string': 'Dima',
-        'track_rows': rows
+        'track_rows': p_rows
     })
     
     return HttpResponse(result)

@@ -23,6 +23,29 @@
             </tr>
             {% endfor %}
         </table>
+        {% if track_rows.has_other_pages %}
+            <ul class="pagination" role="navigation" aria-label="Pagination">
+                
+                {% if track_rows.has_previous %}
+                    <li>
+                        <a href="?page={{ track_rows.previous_page_number }}">
+                            Previous <span class="show-for-sr">page</span>
+                        </a>
+                    </li>
+                {% endif %}
+                
+                {% for i in track_rows.paginator.page_range %}
+                    <li {% if track_rows.number == i %}class="current"{% endif %}><a href="?page={{ i }}" aria-label="Page {{ i }}">{{ i }}</a></li>
+                {% endfor %}
+                {% if track_rows.has_next %}
+                <li>
+                    <a href="?page={{ track_rows.next_page_number }}" aria-label="Next page">
+                        Next <span class="show-for-sr">page</span>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        {% endif %}
     </div>
 </div>
 
